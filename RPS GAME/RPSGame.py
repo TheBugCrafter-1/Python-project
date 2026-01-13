@@ -4,16 +4,6 @@ print("===================")
 print('Rock Paper Scissors')
 print("===================")
 
-computers = ['rock', 'paper', 'scissors'] 
-Player_choice = input("Select One Option: ROCK, PAPER, SCISORR: ")
-
-
-computer_choice = random.choice(computers)
-print("Computer chose:", computer_choice)
-
-
-PlayerChoice = Player_choice
-print(f'Player Choose: {PlayerChoice}')
 
 
 def WhoWin(computer_choice, Player_choice):
@@ -23,12 +13,49 @@ def WhoWin(computer_choice, Player_choice):
         return 'computer W I N !'
     elif computer_choice == "paper" and Player_choice == 'scissors':
         return"player W I N "
-    elif computer_choice == 'scissors' and Player_choice == 'rock':
+    elif computer_choice == 'paper' and Player_choice == 'rock':
         return"Player W I N"
+    elif Player_choice == 'paper' and computer_choice == 'scissors':
+        return 'Computer W I N'
+    elif Player_choice == 'rock' and computer_choice == 'scissors':
+        return 'Computer W I N'
+    elif Player_choice == 'paper' and computer_choice == "rock":
+        return 'computer W I N'
     else:
-        return"syntex error"
+        return"Invalid choice, try again" 
+    
 
-WhoWin(computer_choice, Player_choice )
+count = 0
+
+while count < 5: 
+    computers = ['rock', 'paper', 'scissors'] 
+
+    Player_choice = input("Select One Option: ROCK, PAPER, SCISORR: ").lower()
+
+    print(f'Round {count + 1}/5')
+
+    PlayerChoice = Player_choice
+    print(f'Player Choose: {PlayerChoice}')
+
+    computer_choice = random.choice(computers)
+    print("Computer chose:", computer_choice)
+
+    result = WhoWin(computer_choice, Player_choice)
+    print(result)
+
+    count += 1 
+
+print('Game Over ')
+
+
+
+
+    
+    
+
+
+
+
 
  
 
